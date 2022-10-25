@@ -1,0 +1,62 @@
+<html>
+    <body>
+        {% include "barra.html" %}
+
+
+    <h1>hola mundo</h1>
+    <h2>{{hora}}</h2>
+    
+
+    {% if nombre_per == 'Miguel' %}
+
+       <p>Tu das el curso</p>
+    
+    
+    {% else %}
+
+       <p>El profesor del curso es Miguel Gonzalez</p>
+
+    {% endif %}
+
+
+
+    <p>El nombre del maestro es: {{nombre_per}}</p>
+    <p>El apellido del maestro es: {{apellido}}</p>
+    <p>Y mi edad es de: {{edad}}</p>
+    <p>Y vivo en: {{direc}}</p>
+    <p>nombre alumno: {{clase}}</p>
+    <p>apellido alumno: {{clasea}}</p>
+    <p><strong>Temas del curso</strong></p>
+    <p>
+
+        {% if temasc %}
+
+
+
+
+            {% for eltema in temasc %}
+
+                <p>{{eltema}}</p>
+
+
+            {% endfor %}
+
+        
+        {% else %}
+
+        <p>No ay temas que mostrar</p>
+
+        {% endif %}
+
+
+    </p>
+    <boby>
+</html>
+
+<!--para obtener solo en dia (un atributo de un objeto se usa el punto) hora.day({{hora.day}}/{{hora.year}})-->
+<!--<p>Materias: {{temas}}</p>
+    <p>Materias: {{temas.0}},  {{temas.1}}</p>-->
+
+<!--Se recomienda no abusar estructuras de flugo en las plantillas-->
+<!--los filtros se ponen con |upper es para poner todos en mayusculas y lower para ponerlo en minusculas y los filtros
+se pueden en cadenar uno de tras de otro (|first|lower) -->
